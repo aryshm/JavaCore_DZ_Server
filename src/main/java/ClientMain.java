@@ -12,8 +12,8 @@ public class ClientMain {
         int port = 8844;
         try (Socket clientSocket = new Socket(host, port);
              PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
-            Scanner scanner = new Scanner(System.in);
+             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+             Scanner scanner = new Scanner(System.in)) {
             String resp = "";
             while (!resp.startsWith("Bye")) {
                 resp = in.readLine();
